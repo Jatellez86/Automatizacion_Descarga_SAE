@@ -1,6 +1,6 @@
 # Importa las bibliotecas necesarias para la automatización del navegador con Selenium
 # **********************************************************************************************
-#  @Nombre: Boot descarga datos ReportSae
+#  @Nombre: Boot descarga datos GetsSae
 #  @Autor: Javier Tellez
 #  @Fecha: 20230315
 #  @Cambios:
@@ -22,10 +22,8 @@ import pandas  as pd
 driver = False
 session_id = False
 loginState = False
-user = 'rguevara2'
-password = 'Saegue55'
-date_1 = '06/02/2023'
-date_2 = '06/02/2023'
+user = 'user_prueba'
+password = 'pwd_prueba'
 fecha_actual = date.today()
 fecha_anterior = fecha_actual - timedelta(days=1)
 
