@@ -59,5 +59,4 @@ Este script de Python 🐍 está diseñado para automatizar la descarga de vario
 
 - **21 de marzo de 2023**
 
----
-<span style="color:green">_______________________________________________________________________________________</span>
+
