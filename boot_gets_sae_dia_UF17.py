@@ -66,22 +66,22 @@ for archivo in archivos:
     dates.append(pd.to_datetime(fecha, format='%Y%m%d').strftime('%d/%m/%Y'))  # Convertir la fecha al formato deseado
 
 # Crear el DataFrame con la información obtenida
-df_alejandria_uf06 = pd.DataFrame({'date': dates, 'filename': filenames})
-df_alejandria_uf06["date"] = pd.to_datetime(df_alejandria_uf06["date"], format='%d/%m/%Y')
+df_alejandria_uf17 = pd.DataFrame({'date': dates, 'filename': filenames})
+df_alejandria_uf17["date"] = pd.to_datetime(df_alejandria_uf17["date"], format='%d/%m/%Y')
 
 # Hacer la unión de los dos DataFrames por la columna "date"
-directory_ready_uf06 = pd.merge(date_calendar, df_alejandria_uf06, on='date', how='left')
+directory_ready_uf17 = pd.merge(date_calendar, df_alejandria_uf17, on='date', how='left')
 
 # Filtrar las fechas que están en date_calendar
-df_filtrado_uf06 = directory_ready_uf06[directory_ready_uf06['filename'].isna()]
-df_filtrado_uf06['date'] = pd.to_datetime(df_filtrado_uf06['date']).dt.strftime('%d/%m/%Y')
+df_filtrado_uf17 = directory_ready_uf17[directory_ready_uf17['filename'].isna()]
+df_filtrado_uf17['date'] = pd.to_datetime(df_filtrado_uf17['date']).dt.strftime('%d/%m/%Y')
 
 
-for i in df_filtrado_uf06['date']:
+for i in df_filtrado_uf17['date']:
     print(i)
 
 
-#print(df_filtrado_uf06)
+#print(df_filtrado_uf17)
 
 #driver = webdriver.Chrome(executable_path=r"chromedriver.exe")
 chromedriver = 'chromedriver.exe'
@@ -113,7 +113,7 @@ def openBrowser():
 # Logic --------------------------------------------------------------------------------
 openBrowser()
 
-# pagina principal de gets sae zmo III
+# pagina principal de gets sae
 driver.get('http://10.50.128.91/GestSAE/Account/Login.aspx?ReturnUrl=%2fGestSAE%2fDefault.aspx')
 time.sleep(1)
 
@@ -128,7 +128,7 @@ time.sleep(1)
 driver.refresh()
 
 #ciclo que recorre dias
-for i in df_filtrado_uf06['date']:
+for i in df_filtrado_uf17['date']:
 
     # Define la ruta del directorio donde se encuentran los archivos
     directorio = "C:\\Users\\javier.tellez\\Downloads"
